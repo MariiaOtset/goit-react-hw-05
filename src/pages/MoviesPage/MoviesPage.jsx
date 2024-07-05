@@ -47,8 +47,8 @@ function MoviesPage() {
     setPage((prev) => prev + 1);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     if (!query.trim()) {
       toast.error("Search query is required");
@@ -63,13 +63,12 @@ function MoviesPage() {
     }
   };
 
-  const handleOnChange = (e) => {
-    setQuery(e.target.value);
+  const handleOnChange = (event) => {
+    setQuery(event.target.value);
   };
 
   return (
     <>
-      <Toaster position="top-right" />
       <h1>Movies Search</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -84,6 +83,7 @@ function MoviesPage() {
         <button className={css.btn} type="submit">
           Search
         </button>
+        <Toaster position="top-right" />
       </form>
 
       {isLoading && <p>Loading..</p>}
