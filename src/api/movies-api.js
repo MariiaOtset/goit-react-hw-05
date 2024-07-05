@@ -6,3 +6,59 @@ axios.defaults.headers.common["Authorization"] =
 axios.defaults.params = {
   per_page: 20,
 };
+
+export async function fetchTrendingMovies() {
+  try {
+    const { data } = await axios.get("/trending/movie/day");
+    return data.results;
+  } catch (error) {
+    alert("Error fetching movies");
+  }
+}
+
+export async function fetchMoviesByQuery(query, page) {
+  try {
+    const response = await axios.get("/search/movie", {
+      params: {
+        query,
+        page,
+      },
+    });
+    return response;
+  } catch (error) {
+    alert("Error fetching movies");
+  }
+}
+
+export async function fetchMovieDetails(movieId) {
+  try {
+    const response = await axios.get("/movie", {
+      params: {
+        movieId,
+      },
+    });
+    return response;
+  } catch (error) {
+    alert("Error fetching movies");
+  }
+}
+
+export async function fetchMovieCast(movieId) {
+  try {
+    const response = await axios.get(`/movie/${movieId}/credits`);
+    return response.data.cast;
+  } catch (error) {
+    console.log("Error fetching cast");
+    return [];
+  }
+}
+
+export async function fetchMovieReviews(movieId) {
+  try {
+    const response = await axios.get(`/movie/${movieId}/reviews`);
+    return response.data.results;
+  } catch (error) {
+    console.log("Error fetching reviews");
+    return [];
+  }
+}
