@@ -24,10 +24,10 @@ function MovieReviews() {
 
   return (
     <div className={css.container}>
-      <h2>Reviews</h2>
       <BackLink to={location.state?.from ?? `/movies/${movieId}`}>
         Go back
       </BackLink>
+      <h2>Reviews</h2>
       {reviews.length === 0 ? (
         <p>No reviews available for this movie.</p>
       ) : (

@@ -25,10 +25,10 @@ function MovieCast() {
 
   return (
     <div className={css.container}>
-      <h2>Movie Cast</h2>
       <BackLink to={location.state?.from ?? `/movies/${movieId}`}>
         Go back
       </BackLink>
+      <h2>Movie Cast</h2>
       {cast.length === 0 ? (
         <p>No cast information available</p>
       ) : (
