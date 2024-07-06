@@ -32,7 +32,7 @@ function MovieDetailsPage() {
         const { data } = await fetchMovieDetails(movieId);
         setSelectedMovie(data);
       } catch (error) {
-        alert("Error fetching movie details:");
+        alert("Error fetching movie details");
       }
     }
 
@@ -54,18 +54,21 @@ function MovieDetailsPage() {
         Go back
       </BackLink>
       <div className={css.movieDetails}>
-        <img
-          src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
-          alt={selectedMovie.title}
-          className={css.moviePoster}
-        />
-        <h2 className={css.movieTitle}>{selectedMovie.title}</h2>
-        <p className={css.movieOverview}>{selectedMovie.overview}</p>
+        <div className={css.imgLeft}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500${selectedMovie.poster_path}`}
+            alt={selectedMovie.title}
+            className={css.moviePoster}
+          />
+        </div>
+        <div className={css.infoRight}>
+          <h2 className={css.movieTitle}>{selectedMovie.title}</h2>
+          <p className={css.movieOverview}>{selectedMovie.overview}</p>
+        </div>
       </div>
       <div>
         <nav className={css.navbar}>
           <NavLink className={getClassName} to="cast">
-            {" "}
             Cast
           </NavLink>
           <NavLink className={getClassName} to="reviews">

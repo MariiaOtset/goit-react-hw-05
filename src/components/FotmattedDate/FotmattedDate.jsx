@@ -1,9 +1,9 @@
 import { format } from "date-fns";
-import { uk } from "date-fns/locale";
+import { enGB } from "date-fns/locale";
 
 function FormattedDate({ isoDate }) {
   const formattedDate = format(new Date(isoDate), "dd MMMM yyyy, HH:mm", {
-    locale: uk,
+    locale: enGB,
   });
   return <span>{formattedDate}</span>;
 }
