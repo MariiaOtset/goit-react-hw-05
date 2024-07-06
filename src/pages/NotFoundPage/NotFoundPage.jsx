@@ -25,7 +25,7 @@ function NotFoundPage() {
     <div className={css.container}>
       <TbError404 className={css.icon} />
       <p className={css.message}>
-        Oops, it seems that this page does not exist
+        Oooops, it seems that this page does not exist
       </p>
       <p className={css.countdown}>
         Redirecting to Home page in {countdown}...
