@@ -13,6 +13,7 @@ function MoviesPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [error, setError] = useState(false);
+  const [status, setStatus] = useState("");
 
   const [params, setParams] = useSearchParams();
   const location = useLocation();
@@ -33,6 +34,7 @@ function MoviesPage() {
           page === 1 ? data.results : [...prev, ...data.results]
         );
         setIsVisible(data.results.length > 0);
+        setStatus(data.results.length > 0 ? "success" : "rejected");
       } catch (error) {
         setError(true);
         toast.error("Error fetching movies, try again");
@@ -58,9 +60,9 @@ function MoviesPage() {
     setParams({ search: query });
     setPage(1);
 
-    if (searchedMovies.length === 0) {
-      toast.error("No matching results found");
-    }
+    // if (searchedMovies.length === 0) {
+    //   toast.error("No matching results found");
+    // }
   };
 
   const handleOnChange = (event) => {
@@ -88,6 +90,7 @@ function MoviesPage() {
 
       {isLoading && <p>Loading..</p>}
       {error && <p>Error loading movies</p>}
+      {status === "rejected" && <p>No movies were found :(</p>}
 
       <MovieList
         movies={searchedMovies}
