@@ -1,12 +1,1 @@
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.heading {
-  text-align: center;
-  color: #333;
-  /* margin-top: 40px; */
-  font-size: 2.5em;
-}
+.container{max-width:1292px;margin:0 auto;padding:52px 26px 85px}.heading{margin:0 0 30px;color:#f7f5f4;font-weight:800;font-size:clamp(32px,4vw,50px);letter-spacing:-.045em}.heading::before{content:"DISCOVER / 01";display:block;font-size:12px;letter-spacing:.22em;color:#e9b779;margin-bottom:12px;font-weight:800}@media(max-width:600px){.container{padding:38px 18px 60px}}
