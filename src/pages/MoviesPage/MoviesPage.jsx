@@ -71,8 +71,8 @@ function MoviesPage() {
 
   return (
     <>
-      <h1>Movies Search</h1>
-      <form onSubmit={handleSubmit}>
+      <section className="movieSearchHero"><p className="movieEyebrow">EXPLORE / THE COLLECTION</p><h1>Find your next <span>favorite film.</span></h1><p>Search thousands of movies and discover the stories worth watching.</p></section>
+      <form className="movieSearchForm" onSubmit={handleSubmit}>
         <input
           className={css.input}
           type="text"
