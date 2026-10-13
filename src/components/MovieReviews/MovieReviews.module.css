@@ -1,9 +1,1 @@
-.reviewItem {
-  width: 100%;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
+.container{padding:8px 0}.reviewsList{list-style:none;padding:0;margin:24px 0;display:grid;gap:16px}.reviewItem{width:100%;margin:0;padding:24px;border:1px solid #2d364a;border-radius:16px;background:#171e2d;color:#bac4d4;line-height:1.7;overflow-wrap:anywhere}.reviewItem h3{color:#fff;margin:0 0 10px}.reviewItem p{margin:8px 0}
